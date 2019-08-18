@@ -1,0 +1,45 @@
+html, body, #app{
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header, div{
+  box-sizing: border-box;
+}
+
+.mc-btn, .mc-link{
+  font-size: 18px;
+  font-family: $fe;
+  letter-spacing: -1px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+.mc-btn{
+  font-weight: 700;
+  padding: 16px 40px;
+  color: $purple;
+  border: 3px solid $purple;
+}
+
+.mc-link{
+  font-weight: 500;
+  color: $link;
+  position: relative;
+  font-size: 20px;
+  &:after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $link;
+  }
+}
