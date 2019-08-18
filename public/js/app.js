@@ -44626,7 +44626,7 @@ __WEBPACK_IMPORTED_MODULE_2_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_
 
 var router = new __WEBPACK_IMPORTED_MODULE_3_vue_router__["a" /* default */]({
     mode: 'history',
-    routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_js__["a" /* default */].main, name: 'mainWelcome' }]
+    routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_js__["a" /* default */].main, name: 'mainWelcome' }, { path: '/login', component: __WEBPACK_IMPORTED_MODULE_0__components_js__["a" /* default */].login, name: 'login' }]
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (router);
@@ -44642,7 +44642,9 @@ var router = new __WEBPACK_IMPORTED_MODULE_3_vue_router__["a" /* default */]({
 
 var Components = {
     Template: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('start-welcome', __webpack_require__(42)),
-    main: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('main-welcome', __webpack_require__(45))
+    main: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('main-welcome', __webpack_require__(45)),
+    login: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login', __webpack_require__(61))
+
     //
     // header: Vue.component('header-welcome', require('./components/ExampleComponent.vue')),
 };
@@ -44833,43 +44835,58 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "mc-content" }, [
+    _c("div", { staticClass: "mc-work" }, [
+      _c("div", { staticClass: "center-box" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "auth-box" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "mc-btn", attrs: { to: { name: "login" } } },
+              [_vm._v("ВОЙТИ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "mc-link", attrs: { to: { name: "login" } } },
+              [_vm._v("ЗАРЕГИСТРИРОВАТЬСЯ")]
+            )
+          ],
+          1
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mc-content" }, [
-      _c("div", { staticClass: "mc-left" }, [
-        _c("div", { staticClass: "center-box" }, [
-          _c("h1", { staticClass: "intro-title" }, [
-            _vm._v("\n                Умная & современная "),
-            _c("br"),
-            _vm._v(" "),
-            _c("b", [_vm._v("\u2028ERP")]),
-            _vm._v(" система "),
-            _c("b", [_vm._v("-")]),
-            _vm._v(" для "),
-            _c("b", [_vm._v("IT")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "auth-box" }, [
-            _c("a", { staticClass: "mc-btn", attrs: { href: "#" } }, [
-              _vm._v("ВОЙТИ")
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "mc-link", attrs: { href: "#" } }, [
-              _vm._v("ЗАРЕГИСТРИРОВАТЬСЯ")
-            ])
-          ])
-        ])
-      ]),
+    return _c("h1", { staticClass: "intro-title" }, [
+      _vm._v("\n                Умная & современная "),
+      _c("br"),
       _vm._v(" "),
-      _c("div", { staticClass: "mc-right" }, [
-        _c("div", { staticClass: "mc-backgrounds" }, [
-          _c("div", { staticClass: "mc-bg-els mc-bg-el-1" })
-        ])
+      _c("b", [_vm._v("\u2028ERP")]),
+      _vm._v(" система "),
+      _c("b", [_vm._v("-")]),
+      _vm._v(" для "),
+      _c("b", [_vm._v("IT")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-info" }, [
+      _c("div", { staticClass: "mc-backgrounds" }, [
+        _c("div", { staticClass: "mc-bg-els mc-bg-el-1" })
       ])
     ])
   }
@@ -44973,8 +44990,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
+    data: function data() {
+        return {
+            routeName: this.$route.name
+        };
+    },
+    watch: {
+        '$route': function $route(to, from) {
+            this.routeName = this.$route.name;
+        }
     }
 });
 
@@ -44986,33 +45010,44 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "header",
+    { staticClass: "mc-header" },
+    [
+      _c(
+        "router-link",
+        { staticClass: "mc-logo", attrs: { to: { name: "mainWelcome" } } },
+        [
+          _vm.routeName == "mainWelcome"
+            ? _c("img", { attrs: { src: "/img/logo/Logo.png", alt: "" } })
+            : _vm._e()
+        ]
+      ),
+      _vm._v(" "),
+      _vm._m(0)
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", { staticClass: "mc-header" }, [
-      _c("div", { staticClass: "mc-logo" }, [
-        _c("img", { attrs: { src: "/img/logo/Logo.png", alt: "" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mc-menu" }, [
-        _c("div", { staticClass: "mc-visible" }, [
-          _c("div", { staticClass: "title" }, [_vm._v("MENU")]),
+    return _c("div", { staticClass: "mc-menu" }, [
+      _c("div", { staticClass: "mc-visible" }, [
+        _c("div", { staticClass: "title" }, [_vm._v("MENU")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "visual" }, [
+          _c("span", { staticClass: "re el-1" }),
           _vm._v(" "),
-          _c("div", { staticClass: "visual" }, [
-            _c("span", { staticClass: "re el-1" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "re el-2" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "re el-3" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "re el-4" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "re el-5" })
-          ])
+          _c("span", { staticClass: "re el-2" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "re el-3" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "re el-4" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "re el-5" })
         ])
       ])
     ])
@@ -47877,6 +47912,127 @@ if (inBrowser && window.Vue) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(62)
+/* template */
+var __vue_template__ = __webpack_require__(63)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/WelcomeMiracle/Auth/login.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-78cba6ca", Component.options)
+  } else {
+    hotAPI.reload("data-v-78cba6ca", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-content" }, [
+      _c("div", { staticClass: "mc-info mc-mirror" }, [
+        _c("div", { staticClass: "mc-backgrounds" }, [
+          _c("div", { staticClass: "mc-bg-els mc-bg-el-1" })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mc-work mc-mirror" }, [
+        _c("div", { staticClass: "center-box" })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-78cba6ca", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

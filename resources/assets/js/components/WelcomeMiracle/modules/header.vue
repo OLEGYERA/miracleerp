@@ -1,8 +1,8 @@
 <template>
     <header class="mc-header">
-       <div class="mc-logo">
-           <img src="/img/logo/Logo.png" alt="">
-       </div>
+        <router-link :to="{name: 'mainWelcome'}" class="mc-logo">
+           <img v-if="routeName == 'mainWelcome'" src="/img/logo/Logo.png" alt="">
+        </router-link>
         <div class="mc-menu">
             <div class="mc-visible">
                 <div class="title">MENU</div>
@@ -20,8 +20,15 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        data: function(){
+            return{
+                routeName: this.$route.name,
+            }
+        },
+        watch: {
+            '$route' (to, from) {
+                this.routeName = this.$route.name;
+            },
         }
     }
 </script>

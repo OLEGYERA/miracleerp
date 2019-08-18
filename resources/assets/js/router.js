@@ -9,6 +9,8 @@ const router = new VueRouter
     mode: 'history',
     routes: [
         {path: '/', component: C.main, name: 'mainWelcome'},
+        {path: '/login', component: C.login, name: 'login'},
+
 
     ]
 })
