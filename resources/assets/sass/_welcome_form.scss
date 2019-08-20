@@ -71,6 +71,9 @@
     background-color: $purple;
     color: #fff;
     margin-bottom: 0.8em;
+    &.sign{
+      text-transform: none;
+    }
   }
 }
 

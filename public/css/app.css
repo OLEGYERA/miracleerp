@@ -162,6 +162,10 @@ input {
   margin-bottom: 0.8em;
 }
 
+.mc-btn.submit.sign {
+  text-transform: none;
+}
+
 .mc-link {
   font-weight: 500;
   color: #0B84BD;

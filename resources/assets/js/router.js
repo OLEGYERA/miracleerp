@@ -10,7 +10,7 @@ const router = new VueRouter
     routes: [
         {path: '/', component: C.main, name: 'mainWelcome'},
         {path: '/login', component: C.login, name: 'login'},
-
+        {path: '/signin', component: C.sign, name: 'signin'},
 
     ]
 })

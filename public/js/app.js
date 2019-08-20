@@ -44557,7 +44557,7 @@ __WEBPACK_IMPORTED_MODULE_2_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_
 
 var router = new __WEBPACK_IMPORTED_MODULE_3_vue_router__["a" /* default */]({
     mode: 'history',
-    routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_js__["a" /* default */].main, name: 'mainWelcome' }, { path: '/login', component: __WEBPACK_IMPORTED_MODULE_0__components_js__["a" /* default */].login, name: 'login' }]
+    routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_js__["a" /* default */].main, name: 'mainWelcome' }, { path: '/login', component: __WEBPACK_IMPORTED_MODULE_0__components_js__["a" /* default */].login, name: 'login' }, { path: '/signin', component: __WEBPACK_IMPORTED_MODULE_0__components_js__["a" /* default */].sign, name: 'signin' }]
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (router);
@@ -44574,7 +44574,8 @@ var router = new __WEBPACK_IMPORTED_MODULE_3_vue_router__["a" /* default */]({
 var Components = {
     Template: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('start-welcome', __webpack_require__(41)),
     main: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('main-welcome', __webpack_require__(44)),
-    login: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login', __webpack_require__(47))
+    login: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login', __webpack_require__(47)),
+    sign: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('sign', __webpack_require__(63))
 
     //
     // header: Vue.component('header-welcome', require('./components/ExampleComponent.vue')),
@@ -44790,7 +44791,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "router-link",
-              { staticClass: "mc-link", attrs: { to: { name: "login" } } },
+              { staticClass: "mc-link", attrs: { to: { name: "signin" } } },
               [_vm._v("ЗАРЕГИСТРИРОВАТЬСЯ")]
             )
           ],
@@ -44927,8 +44928,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -44944,79 +44943,97 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "mc-content" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "mc-work mc-mirror" }, [
+      _c("div", { staticClass: "center-box" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("form", { staticClass: "mc-form", attrs: { action: "#" } }, [
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _c("button", { staticClass: "mc-btn submit" }, [
+            _vm._v("АВТОРИЗАЦИЯ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mc-inp-box right" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "mc-ask-accout",
+                  attrs: { to: { name: "signin" } }
+                },
+                [_vm._v("Нет аккаунта?")]
+              )
+            ],
+            1
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mc-content" }, [
-      _c("div", { staticClass: "mc-info mc-mirror" }, [
-        _c("div", { staticClass: "mc-backgrounds" }, [
-          _c("div", { staticClass: "mc-bg-els mc-bg-el-1" })
-        ])
+    return _c("div", { staticClass: "mc-info mc-mirror" }, [
+      _c("div", { staticClass: "mc-backgrounds" }, [
+        _c("div", { staticClass: "mc-bg-els mc-bg-el-1" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", { staticClass: "mc-title" }, [
+      _c("img", { attrs: { src: "img/logo/Logo_img.png", alt: "" } }),
+      _vm._v("\n                Войти\n            ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-inp-box" }, [
+      _c("div", { staticClass: "mc-inp-logo" }, [
+        _c("i", { staticClass: "fas fa-user" })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "mc-work mc-mirror" }, [
-        _c("div", { staticClass: "center-box" }, [
-          _c("h1", { staticClass: "mc-title" }, [
-            _c("img", { attrs: { src: "img/logo/Logo_img.png", alt: "" } }),
-            _vm._v("\n                Войти\n            ")
-          ]),
-          _vm._v(" "),
-          _c("form", { staticClass: "mc-form", attrs: { action: "#" } }, [
-            _c("div", { staticClass: "mc-inp-box" }, [
-              _c("div", { staticClass: "mc-inp-logo" }, [
-                _c("i", { staticClass: "fas fa-user" })
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "mc-inp",
-                attrs: {
-                  type: "email",
-                  name: "email",
-                  placeholder: "Логин или E-mail"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "mc-inp-helper" }, [
-                _c("i", { staticClass: "fas fa-info" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mc-inp-box" }, [
-              _c("div", { staticClass: "mc-inp-logo" }, [
-                _c("i", { staticClass: "fas fa-user" })
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "mc-inp",
-                attrs: {
-                  type: "password",
-                  name: "password",
-                  placeholder: "Пароль"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "mc-inp-helper" }, [
-                _c("i", { staticClass: "fas fa-info" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("button", { staticClass: "mc-btn submit" }, [
-              _vm._v("АВТОРИЗАЦИЯ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mc-inp-box right" }, [
-              _c("a", { staticClass: "mc-ask-accout", attrs: { href: "#" } }, [
-                _vm._v(
-                  "\n                        Нет аккаунта?\n                    "
-                )
-              ])
-            ])
-          ])
-        ])
+      _c("input", {
+        staticClass: "mc-inp",
+        attrs: { type: "email", name: "email", placeholder: "Логин или E-mail" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mc-inp-helper" }, [
+        _c("i", { staticClass: "fas fa-info" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-inp-box" }, [
+      _c("div", { staticClass: "mc-inp-logo" }, [
+        _c("i", { staticClass: "fas fa-lock" })
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "mc-inp",
+        attrs: { type: "password", name: "password", placeholder: "Пароль" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mc-inp-helper" }, [
+        _c("i", { staticClass: "fas fa-info" })
       ])
     ])
   }
@@ -48236,6 +48253,248 @@ if (inBrowser && window.Vue) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(64)
+/* template */
+var __vue_template__ = __webpack_require__(65)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/WelcomeMiracle/Auth/sign.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-34e1b77b", Component.options)
+  } else {
+    hotAPI.reload("data-v-34e1b77b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mc-content" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "mc-work mc-mirror" }, [
+      _c("div", { staticClass: "center-box" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("form", { staticClass: "mc-form", attrs: { action: "#" } }, [
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _c("button", { staticClass: "mc-btn submit sign" }, [
+            _vm._v("Прочесть пользовательское соглашение")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mc-inp-box right" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "mc-ask-accout",
+                  attrs: { to: { name: "login" } }
+                },
+                [_vm._v("Уже есть аккаунт?")]
+              )
+            ],
+            1
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-info mc-mirror" }, [
+      _c("div", { staticClass: "mc-backgrounds" }, [
+        _c("div", { staticClass: "mc-bg-els mc-bg-el-1" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", { staticClass: "mc-title" }, [
+      _c("img", { attrs: { src: "img/logo/Logo_img.png", alt: "" } }),
+      _vm._v("\n                РЕГИСТРАЦИЯ\n            ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-inp-box" }, [
+      _c("div", { staticClass: "mc-inp-logo" }, [
+        _c("i", { staticClass: "fas fa-envelope" })
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "mc-inp",
+        attrs: { type: "email", name: "email", placeholder: "E-mail" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mc-inp-helper" }, [
+        _c("i", { staticClass: "fas fa-info" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-inp-box" }, [
+      _c("div", { staticClass: "mc-inp-logo" }, [
+        _c("i", { staticClass: "fas fa-lock" })
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "mc-inp",
+        attrs: { type: "password", name: "password", placeholder: "Пароль" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mc-inp-helper" }, [
+        _c("i", { staticClass: "fas fa-info" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-inp-box" }, [
+      _c("div", { staticClass: "mc-inp-logo" }, [
+        _c("i", { staticClass: "fas fa-lock-open" })
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "mc-inp",
+        attrs: {
+          type: "password",
+          name: "re-password",
+          placeholder: "Повторите пароль"
+        }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mc-inp-helper" }, [
+        _c("i", { staticClass: "fas fa-info" })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-34e1b77b", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

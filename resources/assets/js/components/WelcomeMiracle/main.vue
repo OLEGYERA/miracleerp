@@ -8,7 +8,7 @@
                 </h1>
                 <div class="auth-box">
                     <router-link :to="{name: 'login'}" class="mc-btn">ВОЙТИ</router-link>
-                    <router-link :to="{name: 'login'}" class="mc-link">ЗАРЕГИСТРИРОВАТЬСЯ</router-link>
+                    <router-link :to="{name: 'signin'}" class="mc-link">ЗАРЕГИСТРИРОВАТЬСЯ</router-link>
                 </div>
             </div>
         </div>
