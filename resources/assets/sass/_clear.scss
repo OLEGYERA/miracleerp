@@ -8,7 +8,7 @@ html, body, #app{
   padding: 0;
 }
 
-header, div{
+header, footer, div, input{
   box-sizing: border-box;
 }
 
@@ -21,25 +21,3 @@ header, div{
 }
 
 
-.mc-btn{
-  font-weight: 700;
-  padding: 16px 40px;
-  color: $purple;
-  border: 3px solid $purple;
-}
-
-.mc-link{
-  font-weight: 500;
-  color: $link;
-  position: relative;
-  font-size: 20px;
-  &:after{
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: $link;
-  }
-}

@@ -2,6 +2,8 @@
 @import "variables";
 // Clear
 @import "clear";
+// WForm
+@import "_welcome_form";
 
 .mc-start{
   display: flex;
@@ -31,6 +33,14 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        &.mc-mirror{
+          .title{
+            color: #000;
+          }
+          .visual .re{
+            background-color: #000;
+          }
+        }
         .title{
           font-family: $fd;
           font-weight: bold;
@@ -101,6 +111,35 @@
             }
           }
         }
+        .mc-title{
+          font-family: $fe;
+          text-transform: uppercase;
+          font-size: 2em;
+          letter-spacing: -1px;
+          color: $purple;
+          display: flex;
+          align-items: center;
+          margin: 0px 0px 0.6em;
+          img{
+            margin-right: 5px;
+          }
+        }
+        .mc-form{
+          .mc-inp-box{
+            &.right{
+              justify-content: flex-end;
+              a{
+                text-decoration: none;
+                color: $link;
+                font-family: $fe;
+                letter-spacing: -1px;
+                font-weight: 500;
+                font-size: 20px;
+              }
+            }
+          }
+
+        }
       }
     }
     .mc-info{
@@ -136,5 +175,74 @@
         }
       }
     }
+  }
+  .mc-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    bottom: 0;
+    .mc-spec-main, .mc-spec-other{
+      width: 100%;
+      display: flex;
+    }
+    .mc-work{
+      padding: 20px 40px 8px;
+      width: 60%;
+      display: flex;
+      align-items: center;
+      .mc-soc-links{
+        display: flex;
+        a{
+          i{
+            font-size: 1.8em;
+            color: $purple-light;
+          }
+
+          margin-right: 5px;
+        }
+      }
+    }
+    .mc-info{
+      padding: 20px 40px 8px;
+      width: 40%;
+    }
+    .mc-spec-other{
+      .mc-work{
+        justify-content: center;
+      }
+      .mc-info{
+        padding: 20px 0 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .mc-app-info{
+          width: 75%;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          a{
+            text-decoration: none;
+            color: $purple;
+            font-family: $fe;
+            letter-spacing: -1px;
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .mc-copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: $fd;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -1px;
   }
 }

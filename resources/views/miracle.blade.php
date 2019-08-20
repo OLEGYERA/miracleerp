@@ -15,5 +15,6 @@
         <start-welcome></start-welcome>
     </div>
     <script src="{{asset('js/app.js')}}"></script>
+    <script src="https://kit.fontawesome.com/c6ae777336.js"></script>
 </body>
 </html>
