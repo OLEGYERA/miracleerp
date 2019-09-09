@@ -73,6 +73,18 @@
       width: 60%;
       &.mc-mirror{
         width: 40%;
+        &.user_license_agreement{
+          position: relative;
+          &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+          }
+        }
       }
       background-color: #fff;
       .center-box{
@@ -149,6 +161,63 @@
       position: relative;
       &.mc-mirror{
         width: 60%;
+        position: relative;
+        .mc-user_license_agreement{
+          position: absolute;
+          padding: 120px 40px 60px;
+          display: flex;
+          flex-direction: column;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.85);
+          z-index: 2;
+          .mc-title{
+            font-family: $fe;
+            text-transform: uppercase;
+            font-size: 1.6em;
+            letter-spacing: -1px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            margin: 0px 0px 0.6em;
+          }
+          .agreement-content{
+            overflow-y: scroll;
+            color: #fff;
+            font-family: $fe;
+            line-height: 1.5em;
+            font-size: 1.05em;
+            text-align: justify;
+            padding: 0px 8px 0px 0px;
+            margin-bottom: 1.5em;
+          }
+          .agreement-manage{
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 20%;
+            align-items: center;
+            font-size: 16px;
+            margin-bottom: 1.5em;
+            .mc-btn.submit{
+              width: auto;
+              margin-bottom: 0px;
+              font-size: 1em;
+            }
+            .mc-link{
+              background: none;
+              border: none;
+              line-height: 1em;
+              height: 1.5em;
+              font-size: 1em;
+              color: #fff;
+              &::after{
+                background-color: #fff;
+              }
+            }
+          }
+        }
       }
       .mc-backgrounds{
         display: flex;
@@ -219,7 +288,7 @@
         align-items: center;
         justify-content: center;
         .mc-app-info{
-          width: 75%;
+          width: 70%;
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;

@@ -10,7 +10,20 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.9em;
-    width: 75%;
+    width: 70%;
+    position: relative;
+    .mc-inp-error{
+      position: absolute;
+      color: #c9302c;
+      background-color: #fff;
+      padding: 0px 10px;
+      font-family: $fe;
+      font-weight: 700;
+      font-size: 0.8em;
+      top: -6px;
+      right: 15%;
+      border-radius: 30px;
+    }
     .mc-inp-logo,
     .mc-inp-helper{
       border: 3px solid $purple;
@@ -18,14 +31,26 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 15%;
-      min-width: 50px;
+      width: 16%;
+      min-width: 65px;
       font-size: 1.8em;
       pading-top: 10px;
+      i{
+        transition: color .5s ease;
+      }
+      .fa-envelope{
+        padding-top: 6px;
+      }
     }
     .mc-inp-logo{
       border-right: 0;
       color: $purple-light;
+      &.red{
+        color: #c9302c;
+      }
+      &.green{
+        color: #449d44;
+      }
     }
     .mc-inp-helper{
       color: $yellow-light;
@@ -33,8 +58,8 @@
     }
     .mc-inp{
       max-height: 65px;
-      width: 70%;
-      min-width: 300px;
+      width: 68%;
+      min-width: 250px;
       padding: 20px 10px 15px;
       border: 3px solid $purple;
       font-size: 20px;
@@ -66,8 +91,10 @@
   padding: 16px 40px;
   color: $purple;
   border: 3px solid $purple;
+  cursor: pointer;
+  outline: none;
   &.submit{
-    width: 75%;
+    width: 70%;
     background-color: $purple;
     color: #fff;
     margin-bottom: 0.8em;
@@ -82,6 +109,8 @@
   color: $link;
   position: relative;
   font-size: 20px;
+  cursor: pointer;
+  outline: none;
   &:after{
     content: "";
     position: absolute;
@@ -91,4 +120,18 @@
     height: 2px;
     background-color: $link;
   }
+}
+
+
+/*Animation for error*/
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active до версии 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }

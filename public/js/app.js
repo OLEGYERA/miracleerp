@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,7 +70,7 @@
 "use strict";
 
 
-var bind = __webpack_require__(5);
+var bind = __webpack_require__(6);
 var isBuffer = __webpack_require__(20);
 
 /*global toString:true*/
@@ -544,10 +544,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(7);
+    adapter = __webpack_require__(8);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(7);
+    adapter = __webpack_require__(8);
   }
   return adapter;
 }
@@ -622,10 +622,16 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(19);
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -643,7 +649,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -833,7 +839,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -844,7 +850,7 @@ var settle = __webpack_require__(23);
 var buildURL = __webpack_require__(25);
 var parseHeaders = __webpack_require__(26);
 var isURLSameOrigin = __webpack_require__(27);
-var createError = __webpack_require__(8);
+var createError = __webpack_require__(9);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -1002,7 +1008,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1027,7 +1033,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1039,7 +1045,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1065,15 +1071,15 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(12);
-module.exports = __webpack_require__(58);
+__webpack_require__(13);
+module.exports = __webpack_require__(62);
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1086,7 +1092,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(13);
+__webpack_require__(14);
 
 window.Vue = __webpack_require__(3);
 
@@ -1097,11 +1103,11 @@ var app = new Vue({
 });
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(14);
+window._ = __webpack_require__(15);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -1110,9 +1116,9 @@ window._ = __webpack_require__(14);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(16);
+  window.$ = window.jQuery = __webpack_require__(17);
 
-  __webpack_require__(17);
+  __webpack_require__(18);
 } catch (e) {}
 
 /**
@@ -1121,7 +1127,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(18);
+window.axios = __webpack_require__(5);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -1157,7 +1163,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -18274,10 +18280,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(15)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(16)(module)))
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -18305,7 +18311,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -28910,7 +28916,7 @@ return jQuery;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 /*!
@@ -31496,12 +31502,6 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(19);
-
-/***/ }),
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31509,7 +31509,7 @@ module.exports = __webpack_require__(19);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(5);
+var bind = __webpack_require__(6);
 var Axios = __webpack_require__(21);
 var defaults = __webpack_require__(4);
 
@@ -31544,9 +31544,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(10);
+axios.Cancel = __webpack_require__(11);
 axios.CancelToken = __webpack_require__(34);
-axios.isCancel = __webpack_require__(9);
+axios.isCancel = __webpack_require__(10);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -31689,7 +31689,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(8);
+var createError = __webpack_require__(9);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -32079,7 +32079,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(31);
-var isCancel = __webpack_require__(9);
+var isCancel = __webpack_require__(10);
 var defaults = __webpack_require__(4);
 var isAbsoluteURL = __webpack_require__(32);
 var combineURLs = __webpack_require__(33);
@@ -32239,7 +32239,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(10);
+var Cancel = __webpack_require__(11);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -44537,7 +44537,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(7)))
 
 /***/ }),
 /* 39 */
@@ -44545,10 +44545,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_js__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_js__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_js__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_router__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_router__ = __webpack_require__(61);
 
 
 
@@ -44575,7 +44575,7 @@ var Components = {
     Template: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('start-welcome', __webpack_require__(41)),
     main: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('main-welcome', __webpack_require__(44)),
     login: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login', __webpack_require__(47)),
-    sign: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('sign', __webpack_require__(63))
+    sign: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('sign', __webpack_require__(50))
 
     //
     // header: Vue.component('header-welcome', require('./components/ExampleComponent.vue')),
@@ -45049,6 +45049,564 @@ if (false) {
 
 /***/ }),
 /* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(51)
+/* template */
+var __vue_template__ = __webpack_require__(53)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/WelcomeMiracle/Auth/sign.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-34e1b77b", Component.options)
+  } else {
+    hotAPI.reload("data-v-34e1b77b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__http_js__ = __webpack_require__(52);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    },
+
+    data: function data() {
+        return {
+            /*data*/
+            email: null,
+            password: null,
+            re_password: null,
+            /*conditions*/
+            email_verify: 0,
+            password_verify: 0,
+            re_password_verify: 0,
+            pass_equal: false,
+            agreement: false,
+            /*errors*/
+            emailError: null,
+            passwordError: null
+        };
+    },
+    methods: {
+        agreement_submit: function agreement_submit() {
+            this.agreement = false;
+            __WEBPACK_IMPORTED_MODULE_0__http_js__["a" /* HTTP */].post('signin', {
+                email: this.email,
+                password: this.password
+            }).then(function (response) {}).catch(function (error) {});
+        },
+        signin: function signin() {
+            if (this.email_verify == 1 && this.password_verify == 1 && this.re_password_verify == 1) {
+                this.agreement = true;
+            } else {
+                this.agreement = false;
+            }
+        },
+        afterFocusEmail: function afterFocusEmail() {
+            var _this = this;
+
+            __WEBPACK_IMPORTED_MODULE_0__http_js__["a" /* HTTP */].post('verify/email', {
+                email: this.email
+            }).then(function (response) {
+                _this.email_verify = 1;
+            }).catch(function (error) {
+                _this.emailError = error.response.data.errors.email[0];
+                _this.email_verify = 2;
+            });
+        },
+        afterFocusPassword: function afterFocusPassword() {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_0__http_js__["a" /* HTTP */].post('verify/password', {
+                password: this.password
+            }).then(function (response) {
+                _this2.password_verify = 1;
+            }).catch(function (error) {
+                _this2.passwordError = error.response.data.errors.password[0];
+                _this2.password_verify = 2;
+            });
+        },
+        afterFocusRePassword: function afterFocusRePassword() {
+            this.re_password_verify = this.pass_equal ? 1 : 2;
+        }
+    },
+    watch: {
+        password: function password(to, from) {
+            this.pass_equal = to == this.re_password ? true : false;
+        },
+        re_password: function re_password(to, from) {
+            this.pass_equal = to == this.password ? true : false;
+            this.re_password_verify = this.pass_equal ? 1 : 0;
+        }
+    }
+
+});
+
+/***/ }),
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HTTP; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+
+
+var HTTP = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
+    baseURL: 'http://localhost:3000/mc-api/p1/'
+});
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mc-content" }, [
+    _c(
+      "div",
+      { staticClass: "mc-info mc-mirror" },
+      [
+        _c("transition", { attrs: { name: "slide-fade" } }, [
+          _vm.agreement
+            ? _c("div", { staticClass: "mc-user_license_agreement" }, [
+                _c("h2", { staticClass: "mc-title" }, [
+                  _vm._v("Пользовательское Соглашение")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "agreement-content" }, [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium alias aspernatur assumenda cupiditate deleniti distinctio dolore, doloribus ea eaque earum et, excepturi explicabo harum id illo iure laborum minima minus nesciunt nihil nobis nulla obcaecati officiis perferendis quaerat saepe sed soluta sunt vero! Dolore ea esse in magnam molestias natus nulla quasi rerum tempora veritatis vero, voluptatum. Ab aliquam aliquid architecto aspernatur, consectetur consequuntur cumque distinctio doloremque enim et eum ex exercitationem hic ipsum iste, itaque iure magni minima minus mollitia nihil nisi nobis nostrum nulla odio officia officiis pariatur placeat praesentium qui quisquam quo repudiandae sed similique tenetur ut voluptas. Ab adipisci alias animi at, beatae blanditiis dolore error ex fuga fugit ipsum itaque laboriosam libero minus non odit pariatur placeat possimus quos reiciendis totam veniam voluptates! Animi asperiores blanditiis eligendi error et, ex facere impedit ipsa nisi non obcaecati odit possimus quia sed sequi suscipit totam unde voluptatum. A accusamus adipisci alias commodi culpa debitis deleniti doloribus illo in, inventore iste nemo nulla officia optio porro quas reprehenderit, totam voluptatibus! Adipisci eligendi hic odit? Enim inventore iste nisi odio, quae quas tenetur. Aliquam amet atque eveniet explicabo ipsum iusto maiores nam praesentium ratione sunt. Accusantium exercitationem quibusdam similique totam. Accusamus, aliquam autem dignissimos dolorum ea et expedita non, odit perspiciatis praesentium quaerat qui, repudiandae voluptatem? Accusamus architecto aut, corporis culpa cumque, distinctio dolores doloribus, excepturi hic inventore laudantium minima provident rerum similique voluptate! A ab aliquam commodi doloremque eligendi eos, eveniet expedita facere facilis fuga fugiat in ipsum iusto laborum porro quasi ratione rem sequi similique soluta suscipit vitae voluptates. A aspernatur assumenda deserunt dolorum error excepturi explicabo fugiat harum hic incidunt, ipsam iste neque non officia, quaerat quos repudiandae ut. Aliquid at dicta dignissimos dolorem ea earum ex expedita id ipsa laborum magnam minima molestiae natus obcaecati officia officiis porro quibusdam, quisquam repellendus saepe sapiente sint soluta, voluptas voluptatem voluptatibus. Assumenda cum dolore doloremque ipsam placeat unde! Ab aspernatur at beatae commodi cumque eius ex fugit impedit in inventore ipsa labore laboriosam libero magnam molestiae nihil nobis nostrum numquam odio optio pariatur provident quae repudiandae, sit soluta sunt tempora unde velit vitae voluptatum. Ab aliquam fugiat laboriosam quia quisquam soluta veritatis voluptas. Aliquam asperiores at cum deleniti dolores excepturi expedita illum itaque laudantium, libero necessitatibus odit officia perferendis quae, reiciendis repellendus unde vel! Ad alias aperiam autem consequuntur cumque debitis dignissimos distinctio eaque earum est et ex expedita explicabo fugiat illo illum inventore, ipsam iure iusto libero maiores maxime molestias mollitia necessitatibus, non nulla numquam officiis provident quae quos recusandae sequi similique sunt tempora tempore unde vero. Architecto debitis deserunt dignissimos distinctio dolor dolore doloremque eligendi eum eveniet excepturi, fugit illum impedit in maiores maxime nam nemo nesciunt non nostrum omnis repellat reprehenderit sint sit, tempore temporibus tenetur vel vitae? Autem consequatur debitis eveniet ex excepturi facere fugiat id, illo, iusto nobis non, obcaecati quod sint! Accusantium adipisci alias amet animi, aperiam at beatae consequuntur cumque cupiditate delectus deleniti deserunt dicta doloremque ducimus eaque earum enim eum ex hic illo impedit ipsa magnam magni minus molestiae nesciunt nobis, officia provident quam, quod recusandae repudiandae suscipit velit veniam voluptate voluptatibus voluptatum? Delectus est explicabo fugit molestias sed vitae! Assumenda culpa magnam nostrum perspiciatis ullam voluptates. A ab atque, beatae commodi consectetur dolor doloribus ducimus esse expedita hic ipsam, minima numquam obcaecati officia praesentium quam quasi quibusdam reiciendis rerum sequi sunt tempora unde veniam? Beatae commodi dolores, expedita fuga ipsa maiores, officiis optio quidem, quis quod ut voluptatum. A adipisci aperiam assumenda beatae debitis deserunt distinctio dolorem eveniet fuga fugit in minus porro, quas recusandae saepe vitae voluptatum. Accusamus amet architecto aspernatur assumenda consequatur consequuntur debitis distinctio dolor dolores eius, error hic illo, labore laudantium libero magni nam nobis nostrum porro quaerat quas quia, saepe sapiente velit veniam? A aut, ea est iste laborum nesciunt possimus praesentium repellendus. Atque dolore earum exercitationem id odio perspiciatis repellendus. Esse in magni, minima odit placeat ratione velit! Commodi deleniti, dolorem dolorum ducimus, eum expedita facilis ipsa iste laboriosam laborum minus neque non officiis quibusdam, quis rem tempora temporibus voluptatem. Adipisci asperiores optio quam sint! Accusantium doloribus facere in magni modi qui sint voluptatibus. Accusamus amet aspernatur atque aut corporis culpa deserunt dignissimos dolore doloribus earum ex fugiat ipsa iusto libero minima, nemo numquam officiis optio pariatur perferendis quaerat quam quia quod soluta temporibus veniam vitae. Aliquam aliquid amet aperiam doloremque dolores explicabo facilis fugiat, itaque nihil nisi quasi qui similique, ut? Asperiores culpa debitis deserunt dolore doloremque earum excepturi itaque laborum libero maxime odio, officiis, ut vel velit vitae! Ad dolore in libero non nostrum officiis, qui quibusdam recusandae unde veritatis? Ad alias aliquid, atque commodi fugiat libero perferendis repellat suscipit voluptates? Deleniti eum inventore iure quidem, quo recusandae veniam! Amet assumenda consequatur deserunt dolores ducimus eaque, obcaecati pariatur porro praesentium reprehenderit. Assumenda atque autem dolor eos excepturi fuga natus nihil, numquam rem soluta sunt ut voluptas. Adipisci eveniet facere hic quaerat, reiciendis sint! Adipisci animi at cumque ea id illo incidunt laboriosam magnam magni maxime molestiae mollitia nam officia pariatur perferendis, possimus quia quibusdam reiciendis reprehenderit rerum sequi similique soluta suscipit ullam vel, vitae voluptas voluptate? Adipisci alias atque blanditiis debitis ex exercitationem impedit incidunt odio quaerat vero. Adipisci animi architecto cumque dolores dolorum, eos qui ratione voluptates. Autem consectetur inventore modi officia quas ratione tempore velit. Architecto aspernatur atque beatae culpa cumque ea fuga impedit iste libero magni modi necessitatibus nisi nostrum quaerat quas quibusdam quis ratione repellat sit unde vitae voluptas, voluptatem voluptatibus! Animi enim illum perspiciatis sapiente tempora. Animi corporis cum deleniti, fugit hic magni molestias nesciunt officia quaerat veniam. Ad facere, facilis ipsum nesciunt repudiandae saepe sequi vel? Accusamus aliquid, animi asperiores dolore explicabo facere iste laborum neque quibusdam quod repellendus sint soluta suscipit? Cupiditate illo incidunt laboriosam optio quibusdam reprehenderit, tempora ullam voluptatibus! Aliquid aspernatur at blanditiis consequatur et ex explicabo iste libero magni, neque nulla officia, quod vitae? Accusantium dignissimos dolor ex odit quod recusandae sint tempore, voluptatem. Alias dolores doloribus libero odio voluptas?\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "agreement-manage" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mc-btn submit",
+                      on: {
+                        click: function($event) {
+                          return _vm.agreement_submit()
+                        }
+                      }
+                    },
+                    [_vm._v("Принять условия")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mc-link",
+                      on: {
+                        click: function($event) {
+                          _vm.agreement = false
+                        }
+                      }
+                    },
+                    [_vm._v("Отменить")]
+                  )
+                ])
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "mc-work mc-mirror",
+        class: { user_license_agreement: _vm.agreement }
+      },
+      [
+        _c("div", { staticClass: "center-box" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              staticClass: "mc-form",
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.signin($event)
+                }
+              }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "mc-inp-box" },
+                [
+                  _c("transition", { attrs: { name: "slide-fade" } }, [
+                    _vm.email_verify == 2
+                      ? _c("div", { staticClass: "mc-inp-error" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.emailError) +
+                              "\n                        "
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "mc-inp-logo",
+                      class: {
+                        green: _vm.email_verify == 1,
+                        red: _vm.email_verify == 2
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-envelope" })]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.email,
+                        expression: "email"
+                      }
+                    ],
+                    ref: "email",
+                    staticClass: "mc-inp",
+                    attrs: {
+                      type: "email",
+                      placeholder: "E-mail",
+                      required: ""
+                    },
+                    domProps: { value: _vm.email },
+                    on: {
+                      blur: _vm.afterFocusEmail,
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.email = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mc-inp-box" },
+                [
+                  _c("transition", { attrs: { name: "slide-fade" } }, [
+                    _vm.password_verify == 2
+                      ? _c("div", { staticClass: "mc-inp-error" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.passwordError) +
+                              "\n                        "
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "mc-inp-logo",
+                      class: {
+                        green: _vm.password_verify == 1,
+                        red: _vm.password_verify == 2
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-lock" })]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.password,
+                        expression: "password"
+                      }
+                    ],
+                    staticClass: "mc-inp",
+                    attrs: {
+                      type: "password",
+                      placeholder: "Пароль",
+                      required: ""
+                    },
+                    domProps: { value: _vm.password },
+                    on: {
+                      blur: _vm.afterFocusPassword,
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.password = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(3)
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mc-inp-box" },
+                [
+                  _c("transition", { attrs: { name: "slide-fade" } }, [
+                    _vm.re_password_verify == 2
+                      ? _c("div", { staticClass: "mc-inp-error" }, [
+                          _vm._v(
+                            "\n                            Пароли не совпадают.\n                        "
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "mc-inp-logo",
+                      class: {
+                        green: _vm.re_password_verify == 1,
+                        red: _vm.re_password_verify == 2
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-lock-open" })]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.re_password,
+                        expression: "re_password"
+                      }
+                    ],
+                    staticClass: "mc-inp",
+                    attrs: {
+                      type: "password",
+                      placeholder: "Повторите пароль",
+                      required: ""
+                    },
+                    domProps: { value: _vm.re_password },
+                    on: {
+                      blur: _vm.afterFocusRePassword,
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.re_password = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(4)
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("button", { staticClass: "mc-btn submit sign" }, [
+                _vm._v("Прочесть пользовательское соглашение")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mc-inp-box right" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "mc-ask-accout",
+                      attrs: { to: { name: "login" } }
+                    },
+                    [_vm._v("Уже есть аккаунт?")]
+                  )
+                ],
+                1
+              )
+            ]
+          )
+        ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-backgrounds" }, [
+      _c("div", { staticClass: "mc-bg-els mc-bg-el-1" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", { staticClass: "mc-title" }, [
+      _c("img", { attrs: { src: "img/logo/Logo_img.png", alt: "" } }),
+      _vm._v("\n                РЕГИСТРАЦИЯ\n            ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-inp-helper" }, [
+      _c("i", { staticClass: "fas fa-info" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-inp-helper" }, [
+      _c("i", { staticClass: "fas fa-info" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mc-inp-helper" }, [
+      _c("i", { staticClass: "fas fa-info" })
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-34e1b77b", module.exports)
+  }
+}
+
+/***/ }),
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45057,23 +45615,23 @@ if (false) {
 
 
 var Modules = {
-    header: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('header-welcome', __webpack_require__(51)),
-    footer: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('footer-welcome', __webpack_require__(54))
+    header: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('header-welcome', __webpack_require__(55)),
+    footer: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('footer-welcome', __webpack_require__(58))
 
 };
 
 /* unused harmony default export */ var _unused_webpack_default_export = (Modules);
 
 /***/ }),
-/* 51 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(52)
+var __vue_script__ = __webpack_require__(56)
 /* template */
-var __vue_template__ = __webpack_require__(53)
+var __vue_template__ = __webpack_require__(57)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -45112,7 +45670,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45153,7 +45711,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 53 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -45220,15 +45778,15 @@ if (false) {
 }
 
 /***/ }),
-/* 54 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(55)
+var __vue_script__ = __webpack_require__(59)
 /* template */
-var __vue_template__ = __webpack_require__(56)
+var __vue_template__ = __webpack_require__(60)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -45267,7 +45825,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45317,7 +45875,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 56 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -45404,7 +45962,7 @@ if (false) {
 }
 
 /***/ }),
-/* 57 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48249,252 +48807,10 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 58 */
+/* 62 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(64)
-/* template */
-var __vue_template__ = __webpack_require__(65)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/WelcomeMiracle/Auth/sign.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-34e1b77b", Component.options)
-  } else {
-    hotAPI.reload("data-v-34e1b77b", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 64 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 65 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mc-content" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "mc-work mc-mirror" }, [
-      _c("div", { staticClass: "center-box" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("form", { staticClass: "mc-form", attrs: { action: "#" } }, [
-          _vm._m(2),
-          _vm._v(" "),
-          _vm._m(3),
-          _vm._v(" "),
-          _vm._m(4),
-          _vm._v(" "),
-          _c("button", { staticClass: "mc-btn submit sign" }, [
-            _vm._v("Прочесть пользовательское соглашение")
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "mc-inp-box right" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "mc-ask-accout",
-                  attrs: { to: { name: "login" } }
-                },
-                [_vm._v("Уже есть аккаунт?")]
-              )
-            ],
-            1
-          )
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mc-info mc-mirror" }, [
-      _c("div", { staticClass: "mc-backgrounds" }, [
-        _c("div", { staticClass: "mc-bg-els mc-bg-el-1" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", { staticClass: "mc-title" }, [
-      _c("img", { attrs: { src: "img/logo/Logo_img.png", alt: "" } }),
-      _vm._v("\n                РЕГИСТРАЦИЯ\n            ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mc-inp-box" }, [
-      _c("div", { staticClass: "mc-inp-logo" }, [
-        _c("i", { staticClass: "fas fa-envelope" })
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "mc-inp",
-        attrs: { type: "email", name: "email", placeholder: "E-mail" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "mc-inp-helper" }, [
-        _c("i", { staticClass: "fas fa-info" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mc-inp-box" }, [
-      _c("div", { staticClass: "mc-inp-logo" }, [
-        _c("i", { staticClass: "fas fa-lock" })
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "mc-inp",
-        attrs: { type: "password", name: "password", placeholder: "Пароль" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "mc-inp-helper" }, [
-        _c("i", { staticClass: "fas fa-info" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mc-inp-box" }, [
-      _c("div", { staticClass: "mc-inp-logo" }, [
-        _c("i", { staticClass: "fas fa-lock-open" })
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "mc-inp",
-        attrs: {
-          type: "password",
-          name: "re-password",
-          placeholder: "Повторите пароль"
-        }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "mc-inp-helper" }, [
-        _c("i", { staticClass: "fas fa-info" })
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-34e1b77b", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);

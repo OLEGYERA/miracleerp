@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Dirape\Token\Token;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Requests\UserRequest as Request;
+use Illuminate\Http\Response;
 
 class RegisterController extends Controller
 {
@@ -45,14 +48,16 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+
+    protected function signin(Request $request){
+        $data['email'] = $request->email;
+        $data['password'] = $request->password;
+
+        $signin_res = $this->create($request->all());
+
+        return response()->json($signin_res);
     }
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -63,8 +68,8 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
+            'remember_token' => (new Token())->Unique('users', 'remember_token', 32),
             'password' => bcrypt($data['password']),
         ]);
     }

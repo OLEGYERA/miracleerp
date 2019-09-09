@@ -66,7 +66,21 @@ input {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 0.9em;
-  width: 75%;
+  width: 70%;
+  position: relative;
+}
+
+.mc-form .mc-inp-box .mc-inp-error {
+  position: absolute;
+  color: #c9302c;
+  background-color: #fff;
+  padding: 0px 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 0.8em;
+  top: -6px;
+  right: 15%;
+  border-radius: 30px;
 }
 
 .mc-form .mc-inp-box .mc-inp-logo,
@@ -82,15 +96,34 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 15%;
-  min-width: 50px;
+  width: 16%;
+  min-width: 65px;
   font-size: 1.8em;
   pading-top: 10px;
+}
+
+.mc-form .mc-inp-box .mc-inp-logo i,
+.mc-form .mc-inp-box .mc-inp-helper i {
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+}
+
+.mc-form .mc-inp-box .mc-inp-logo .fa-envelope,
+.mc-form .mc-inp-box .mc-inp-helper .fa-envelope {
+  padding-top: 6px;
 }
 
 .mc-form .mc-inp-box .mc-inp-logo {
   border-right: 0;
   color: rgba(68, 68, 118, 0.6);
+}
+
+.mc-form .mc-inp-box .mc-inp-logo.red {
+  color: #c9302c;
+}
+
+.mc-form .mc-inp-box .mc-inp-logo.green {
+  color: #449d44;
 }
 
 .mc-form .mc-inp-box .mc-inp-helper {
@@ -100,8 +133,8 @@ input {
 
 .mc-form .mc-inp-box .mc-inp {
   max-height: 65px;
-  width: 70%;
-  min-width: 300px;
+  width: 68%;
+  min-width: 250px;
   padding: 20px 10px 15px;
   border: 3px solid #444476;
   font-size: 20px;
@@ -153,10 +186,12 @@ input {
   padding: 16px 40px;
   color: #444476;
   border: 3px solid #444476;
+  cursor: pointer;
+  outline: none;
 }
 
 .mc-btn.submit {
-  width: 75%;
+  width: 70%;
   background-color: #444476;
   color: #fff;
   margin-bottom: 0.8em;
@@ -171,6 +206,8 @@ input {
   color: #0B84BD;
   position: relative;
   font-size: 20px;
+  cursor: pointer;
+  outline: none;
 }
 
 .mc-link:after {
@@ -181,6 +218,25 @@ input {
   width: 100%;
   height: 2px;
   background-color: #0B84BD;
+}
+
+/*Animation for error*/
+
+.slide-fade-enter-active {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.slide-fade-leave-active {
+  -webkit-transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  opacity: 0;
 }
 
 .mc-start {
@@ -303,6 +359,20 @@ input {
   width: 40%;
 }
 
+.mc-start .mc-content .mc-work.mc-mirror.user_license_agreement {
+  position: relative;
+}
+
+.mc-start .mc-content .mc-work.mc-mirror.user_license_agreement::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .mc-start .mc-content .mc-work .center-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,6 +480,85 @@ input {
 
 .mc-start .mc-content .mc-info.mc-mirror {
   width: 60%;
+  position: relative;
+}
+
+.mc-start .mc-content .mc-info.mc-mirror .mc-user_license_agreement {
+  position: absolute;
+  padding: 120px 40px 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 2;
+}
+
+.mc-start .mc-content .mc-info.mc-mirror .mc-user_license_agreement .mc-title {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.6em;
+  letter-spacing: -1px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0px 0px 0.6em;
+}
+
+.mc-start .mc-content .mc-info.mc-mirror .mc-user_license_agreement .agreement-content {
+  overflow-y: scroll;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5em;
+  font-size: 1.05em;
+  text-align: justify;
+  padding: 0px 8px 0px 0px;
+  margin-bottom: 1.5em;
+}
+
+.mc-start .mc-content .mc-info.mc-mirror .mc-user_license_agreement .agreement-manage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 20%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  margin-bottom: 1.5em;
+}
+
+.mc-start .mc-content .mc-info.mc-mirror .mc-user_license_agreement .agreement-manage .mc-btn.submit {
+  width: auto;
+  margin-bottom: 0px;
+  font-size: 1em;
+}
+
+.mc-start .mc-content .mc-info.mc-mirror .mc-user_license_agreement .agreement-manage .mc-link {
+  background: none;
+  border: none;
+  line-height: 1em;
+  height: 1.5em;
+  font-size: 1em;
+  color: #fff;
+}
+
+.mc-start .mc-content .mc-info.mc-mirror .mc-user_license_agreement .agreement-manage .mc-link::after {
+  background-color: #fff;
 }
 
 .mc-start .mc-content .mc-info .mc-backgrounds {
@@ -524,7 +673,7 @@ input {
 }
 
 .mc-start .mc-footer .mc-spec-other .mc-info .mc-app-info {
-  width: 75%;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
