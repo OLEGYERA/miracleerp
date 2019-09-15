@@ -3,7 +3,9 @@
 // Clear
 @import "clear";
 // WForm
-@import "_welcome_form";
+@import "welcome_form";
+// Stickers
+@import "stickers";
 
 .mc-start{
   display: flex;
@@ -244,6 +246,41 @@
         }
       }
     }
+    .mc-confirm-field{
+      display: flex;
+      flex-direction: column;
+      flex: auto;
+      justify-content: center;
+      align-items: center;
+      padding: 90px 25%;
+      .mc-title{
+        font-family: $fe;
+        text-transform: uppercase;
+        font-size: 2em;
+        letter-spacing: -1px;
+        color: $purple;
+        display: flex;
+        align-items: center;
+        margin: 0px 0px 1em;
+        position: relative;
+        img{
+          margin-right: 5px;
+        }
+        .mc-email{
+          text-transform: none;
+          color: $link;
+          position: absolute;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          top: 2.2em;
+          font-size: 0.9em;
+        }
+      }
+      .mc-inp-box{
+        width: 52%;
+      }
+    }
   }
   .mc-footer {
     display: flex;
@@ -314,4 +351,16 @@
     font-size: 28px;
     letter-spacing: -1px;
   }
+
+  .mc-footer{
+    .mc-spec-confirm{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      .mc-copyright{
+        color: $purple;
+      }
+    }
+  }
+
 }

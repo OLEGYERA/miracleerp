@@ -11,6 +11,8 @@ const router = new VueRouter
         {path: '/', component: C.main, name: 'mainWelcome'},
         {path: '/login', component: C.login, name: 'login'},
         {path: '/signin', component: C.sign, name: 'signin'},
+        {path: '/confirmation/email/:email', component: C.confirmation, name: 'confirmation'},
+        {path: '/reference/confirmation/:email/:token', component: C.reference, name: 'reference'},
 
     ]
 })

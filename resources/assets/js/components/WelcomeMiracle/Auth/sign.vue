@@ -10,7 +10,6 @@
                     <div class="agreement-manage">
                         <button class="mc-btn submit" @click="agreement_submit()">Принять условия</button>
                         <button class="mc-link" @click="agreement = false">Отменить</button>
-
                     </div>
                 </div>
             </transition>
@@ -72,7 +71,7 @@
 
     export default {
         mounted() {
-            console.log('Component mounted.')
+
         },
         data: function(){
             return{
@@ -80,6 +79,7 @@
                 email: null,
                 password: null,
                 re_password: null,
+                sign_in: null,
                 /*conditions*/
                 email_verify: 0,
                 password_verify: 0,
@@ -93,16 +93,13 @@
         },
         methods: {
             agreement_submit(){
-                this.agreement = false;
                 HTTP.post(`signin`, {
                     email: this.email,
                     password: this.password,
                 })
                     .then(response => {
-
-                    })
-                    .catch(error => {
-
+                        this.agreement = false;
+                        this.$router.push({ name: 'confirmation', params: {email: this.email }})
                     })
             },
             signin(){

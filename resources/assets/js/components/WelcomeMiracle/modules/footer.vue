@@ -1,6 +1,6 @@
 <template>
     <footer class="mc-footer">
-       <div class="mc-spec-main" v-if="routeName == 'mainWelcome'">
+       <div class="mc-spec-main" v-if="routeName === 'mainWelcome'">
            <div class="mc-work">
                <div class="mc-soc-links">
                    <a href=""><i class="fab fa-facebook-square"></i></a>
@@ -10,8 +10,8 @@
            <div class="mc-info">
                <div class="mc-copyright">©2019 Miracle, Inc.</div>
            </div>
-       </div>
-        <div class="mc-spec-other" v-else >
+        </div>
+        <div class="mc-spec-other" v-else>
             <div class="mc-work">
                 <div class="mc-copyright">©2019 Miracle, Inc.</div>
             </div>

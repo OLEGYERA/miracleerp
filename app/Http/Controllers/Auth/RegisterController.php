@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Dirape\Token\Token;
+use App\Mail\UserVerify;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -55,7 +57,11 @@ class RegisterController extends Controller
 
         $signin_res = $this->create($request->all());
 
-        return response()->json($signin_res);
+        if($signin_res){
+            Mail::to($signin_res->email)->send(new UserVerify($signin_res));
+        }
+
+        return response()->json(true);
     }
 
 
@@ -73,4 +79,5 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
 }

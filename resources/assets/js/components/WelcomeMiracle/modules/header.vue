@@ -1,7 +1,7 @@
 <template>
     <header class="mc-header">
         <router-link :to="{name: 'mainWelcome'}" class="mc-logo">
-            <img v-if="routeName == 'mainWelcome'" src="/img/logo/Logo.png" alt="">
+            <img v-if="(routeName == 'mainWelcome')" src="/img/logo/Logo.png" alt="">
             <img v-else src="/img/logo/Logo-wt.png" alt="">
         </router-link>
         <div class="mc-menu">

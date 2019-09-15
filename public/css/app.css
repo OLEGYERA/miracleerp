@@ -239,6 +239,18 @@ input {
   opacity: 0;
 }
 
+.mc-sticker {
+  width: 95%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 15px;
+}
+
+.mc-sticker.str-gr {
+  -webkit-box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #28a745, 2px 2px 0 0 #28a745, 3px 3px 0 0 #28a745, 4px 4px 0 0 #28a745, 5px 5px 0 0 #28a745, 6px 6px 0 0 #28a745;
+          box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #28a745, 2px 2px 0 0 #28a745, 3px 3px 0 0 #28a745, 4px 4px 0 0 #28a745, 5px 5px 0 0 #28a745, 6px 6px 0 0 #28a745;
+}
+
 .mc-start {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -598,6 +610,65 @@ input {
   background: linear-gradient(270deg, #D62E23 25.73%, #FFCE11 62.86%, #23D680 93.81%);
 }
 
+.mc-start .mc-content .mc-confirm-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 90px 25%;
+}
+
+.mc-start .mc-content .mc-confirm-field .mc-title {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: -1px;
+  color: #444476;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px 0px 1em;
+  position: relative;
+}
+
+.mc-start .mc-content .mc-confirm-field .mc-title img {
+  margin-right: 5px;
+}
+
+.mc-start .mc-content .mc-confirm-field .mc-title .mc-email {
+  text-transform: none;
+  color: #0B84BD;
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 2.2em;
+  font-size: 0.9em;
+}
+
+.mc-start .mc-content .mc-confirm-field .mc-inp-box {
+  width: 52%;
+}
+
 .mc-start .mc-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -708,5 +779,19 @@ input {
   font-weight: 600;
   font-size: 28px;
   letter-spacing: -1px;
+}
+
+.mc-start .mc-footer .mc-spec-confirm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.mc-start .mc-footer .mc-spec-confirm .mc-copyright {
+  color: #444476;
 }
 
