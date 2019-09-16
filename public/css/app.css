@@ -239,16 +239,123 @@ input {
   opacity: 0;
 }
 
-.mc-sticker {
-  width: 95%;
+.mc-stickers {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10px 15px;
 }
 
-.mc-sticker.str-gr {
-  -webkit-box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #28a745, 2px 2px 0 0 #28a745, 3px 3px 0 0 #28a745, 4px 4px 0 0 #28a745, 5px 5px 0 0 #28a745, 6px 6px 0 0 #28a745;
-          box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #28a745, 2px 2px 0 0 #28a745, 3px 3px 0 0 #28a745, 4px 4px 0 0 #28a745, 5px 5px 0 0 #28a745, 6px 6px 0 0 #28a745;
+.mc-stickers .mc-sticker {
+  width: 450px;
+  height: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 3px solid #444476;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 15px auto 0px;
+}
+
+.mc-stickers .mc-sticker:first-child {
+  margin-top: 0px;
+}
+
+.mc-stickers .mc-sticker .sticker-status-side {
+  width: 75px;
+  min-width: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, right top, left top, color-stop(25.73%, #D62E23), color-stop(62.86%, #FFCE11), color-stop(93.81%, #23D680));
+  background: linear-gradient(270deg, #D62E23 25.73%, #FFCE11 62.86%, #23D680 93.81%);
+  position: relative;
+}
+
+.mc-stickers .mc-sticker .sticker-status-side::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  border-right: 4px solid #00B16A;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mc-stickers .mc-sticker .sticker-status-side i {
+  position: relative;
+  z-index: 2;
+  color: #00B16A;
+  font-size: 2.4em;
+}
+
+.mc-stickers .mc-sticker .sticker-content-side {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+.mc-stickers .mc-sticker .sticker-content-side .sticker-title {
+  font-size: 0.9em;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 10px 0px 15px;
+  padding: 0px 35px 0px 5px;
+  letter-spacing: -0.5px;
+  color: #444476;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mc-stickers .mc-sticker .sticker-content-side .mc-sticker-close,
+.mc-stickers .mc-sticker .sticker-content-side .mc-sticker-show {
+  position: absolute;
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  right: 12px;
+  font-size: 1.2em;
+}
+
+.mc-stickers .mc-sticker .sticker-content-side .mc-sticker-close i,
+.mc-stickers .mc-sticker .sticker-content-side .mc-sticker-show i {
+  cursor: pointer;
+}
+
+.mc-stickers .mc-sticker .sticker-content-side .mc-sticker-close {
+  color: #D62E23;
+  top: 8px;
+}
+
+.mc-stickers .mc-sticker .sticker-content-side .mc-sticker-show {
+  color: #E0A800;
+  bottom: 8px;
 }
 
 .mc-start {
@@ -364,6 +471,7 @@ input {
       -ms-flex: auto;
           flex: auto;
   width: 60%;
+  position: relative;
   background-color: #fff;
 }
 
@@ -383,6 +491,14 @@ input {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mc-start .mc-content .mc-work.mc-mirror .mc-stickers-area {
+  position: absolute !important;
+  height: 200px;
+  width: 100%;
+  top: 10%;
+  overflow: hidden;
 }
 
 .mc-start .mc-content .mc-work .center-box {

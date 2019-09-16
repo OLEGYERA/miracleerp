@@ -1,15 +1,92 @@
-.mc-sticker{
-  width: 95%;
+.mc-stickers{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   box-sizing: border-box;
-  padding: 10px 15px;
-
-  &.str-gr{
-    box-shadow:inset 0 -8px 0 0 rgba(0,0,0,.2),
-    1px 1px 0 0 #28a745,
-    2px 2px 0 0 #28a745,
-    3px 3px 0 0 #28a745,
-    4px 4px 0 0 #28a745,
-    5px 5px 0 0 #28a745,
-    6px 6px 0 0 #28a745,
+  .mc-sticker{
+    width: 450px;
+    height: 75px;
+    display: flex;
+    border: 3px solid $purple;
+    box-sizing: border-box;
+    margin: 15px auto 0px;
+    &:first-child{
+      margin-top: 0px;
+    }
+    .sticker-status-side{
+      width: 75px;
+      min-width: 75px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(270deg, #D62E23 25.73%, #FFCE11 62.86%, #23D680 93.81%);
+      position: relative;
+      &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        border-right: 4px solid $green;
+        box-sizing: border-box;
+      }
+      i{
+        position: relative;
+        z-index: 2;
+        color: $green;
+        font-size: 2.4em;
+      }
+    }
+    .sticker-content-side{
+      width: 100%;
+      background-color: #fff;
+      position: relative;
+      .sticker-title{
+        font-size: 0.9em;
+        text-align: center;
+        font-family: $fe;
+        font-weight: 500;
+        line-height: 24px;
+        margin: 10px 0px 15px;
+        padding: 0px 35px 0px 5px;
+        letter-spacing: -0.5px;
+        color: $purple;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .mc-sticker-close,
+      .mc-sticker-show{
+        position: absolute;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        right: 12px;
+        font-size: 1.2em;
+        i{
+          cursor: pointer;
+        }
+      }
+      .mc-sticker-close{
+        color: $red;
+        top: 8px;
+      }
+      .mc-sticker-show{
+        color: $yellow;
+        bottom: 8px;
+      }
+    }
   }
+  //&.str-gr{
+  //  box-shadow:inset 0 -8px 0 0 rgba(0,0,0,.2),
+  //  1px 1px 0 0 #28a745,
+  //  2px 2px 0 0 #28a745,
+  //  3px 3px 0 0 #28a745,
+  //  4px 4px 0 0 #28a745,
+  //  5px 5px 0 0 #28a745,
+  //  6px 6px 0 0 #28a745,
+  //}
 }

@@ -1,5 +1,5 @@
-import C from './components.js';
 import M from './modules.js';
+import C from './components.js';
 import Vue from 'vue';
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);

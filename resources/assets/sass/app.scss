@@ -73,6 +73,7 @@
       display: flex;
       flex: auto;
       width: 60%;
+      position: relative;
       &.mc-mirror{
         width: 40%;
         &.user_license_agreement{
@@ -86,6 +87,14 @@
             height: 100%;
             background-color: rgba(0,0,0,0.5);
           }
+        }
+        .mc-stickers-area{
+          position: absolute!important;
+          //background-color: rgba(255, 0, 0, 0.3);
+          height: 200px;
+          width: 100%;
+          top: 10%;
+          overflow: hidden;
         }
       }
       background-color: #fff;

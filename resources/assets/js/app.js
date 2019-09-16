@@ -10,6 +10,10 @@ require('./bootstrap');
 window.Vue = require('vue');
 import Routes from './router.js'
 
+/*Plugins*/
+import Vuebar from 'vuebar';
+Vue.use(Vuebar);
+
 const app = new Vue({
     el: '#app',
     router: Routes,

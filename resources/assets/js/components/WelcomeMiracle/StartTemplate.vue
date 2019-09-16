@@ -9,7 +9,12 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
-        }
+
+        },
+        // watch: {
+        //     '$route' (to, from) {
+        //         console.log(from);
+        //     }
+        // }
     }
 </script>

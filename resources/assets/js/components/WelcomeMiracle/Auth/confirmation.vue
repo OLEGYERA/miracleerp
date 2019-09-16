@@ -10,6 +10,14 @@
         </div>
         <div class="mc-work mc-mirror">
             <div class="center-box">
+                <div class="mc-stickers-area">
+                    <div class="mc-stickers">
+                        <sticker
+                                :id="1"
+                                :title="'На Ваш почтовый ящик был отправлен защитный ключ для верификации e-mail адреса.'"
+                        ></sticker>
+                    </div>
+                </div>
                 <h1 class="mc-title">
                     <img src="/img/logo/Logo_img.png" alt="">
                     Верификация
@@ -40,6 +48,7 @@
 
     export default {
         mounted() {
+            console.log(this.$route)
             HTTP.post(`exist/email`, {
                 email: this.$route.params.email
             })
@@ -86,6 +95,7 @@
                     if(this.token_verify == 2) this.tokenError = (this.token.length > 32) ? 'Ключ не должен превышать 32 символа.' : 'Ключ не должен быть меньше 32 символов.';
             },
         },
+
 
     }
 </script>
