@@ -45,10 +45,10 @@
 
 <script>
     import {HTTP} from '../../../http.js'
-
+    import {mapGetters} from 'vuex';
     export default {
         mounted() {
-            console.log(this.$route)
+            console.log(this.TODOS)
             HTTP.post(`exist/email`, {
                 email: this.$route.params.email
             })
@@ -68,6 +68,12 @@
                 /*errors*/
                 tokenError: null,
             }
+        },
+        computed : {
+            ...mapGetters({
+                varib: 'TODOS'
+            }),
+            ...mapGetters(['TODOS']),
         },
         methods: {
             verification(){
